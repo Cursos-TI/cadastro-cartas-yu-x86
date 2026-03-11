@@ -4,12 +4,20 @@
 // Código simples pois estou seguindo conforme a faculdade deseja!!
 
 // Segue a call do pai aq bb
+float calculaDensidadePopulacional(int populacao, float area){
+  return (float) populacao / area;
+}
+
+float calculaPibPerCapita(int populacao, float pib){
+  return pib / populacao;
+}
+
 int main(){
   // declarando as váariáveis a serem utilizadas
   // confesso que não gosto de fazer assim, código fica feião
   char estado, estado2, codigoDaCarta[4], codigoDaCarta2[4], cidade[50], cidade2[50];
   int populacao, populacao2, quantidadePontosTuristicos, quantidadePontosTuristicos2;
-  float area, area2, pib, pib2;
+  float area, area2, pib, pib2, densidadePopulacional, densidadePopulacional2, pibPerCapita, pibPerCapita2;
 
   // aqui eu fiquei agoniado, queria criar struct e otimizar com for, mas ok, foi pedido assim
   printf("Criacao das cartas do super trunfo\n\n");
@@ -18,8 +26,9 @@ int main(){
   criação da carta 1
   não utilizei acentos para evitar conflitos
   */
+  printf("Carta 1:\n");
   printf("Estado: ");
-  scanf("%c", &estado);
+  scanf(" %c", &estado);
   printf("Codigo: ");
   scanf("%s", &codigoDaCarta);
   printf("Cidade: ");
@@ -31,16 +40,20 @@ int main(){
   scanf("%f", &area);
   printf("PIB: ");
   scanf("%f", &pib);
+  pib *= 1e9;
   printf("Quantidade de pontos turisticos: ");
   scanf("%d", &quantidadePontosTuristicos);
+  getchar();
+  densidadePopulacional = calculaDensidadePopulacional(populacao, area);
+  pibPerCapita = calculaPibPerCapita(populacao, pib);
 
   printf("\n");
-  getchar();
+  
 
   // criação da segunda carta
   printf("Carta 2:\n");
   printf("Estado: ");
-  scanf("%c", &estado2);
+  scanf(" %c", &estado2);
   printf("Codigo: ");
   scanf("%s", &codigoDaCarta2);
   printf("Cidade: ");
@@ -52,15 +65,16 @@ int main(){
   scanf("%f", &area2);
   printf("PIB: ");
   scanf("%f", &pib2);
+  pib2 *= 1e9;
   printf("Quantidade de pontos turisticos: ");
   scanf("%d", &quantidadePontosTuristicos2);
+  densidadePopulacional2 = calculaDensidadePopulacional(populacao2, area2);
+  pibPerCapita2 = calculaPibPerCapita(populacao2, pib2);
 
   printf("\n\n");
 
   //Exibição das cartas
   printf("Cartas criadas:\n\n");
-
-  printf("Carta 1:\n");
   printf("Carta 1:\n");
   printf("Estado: %c\n", estado);
   printf("Codigo: %s\n", codigoDaCarta);
@@ -69,6 +83,8 @@ int main(){
   printf("Area: %.2fkm2\n", area);
   printf("PIB: R$%.2f\n", pib);
   printf("Quantidade de pontos turisticos: %d\n", quantidadePontosTuristicos);
+  printf("Densidade Populacional: %.2f hab/km2\n", densidadePopulacional);
+  printf("PIB per Capita: R$%.2f\n", pibPerCapita);
 
   printf("\n");
 
@@ -80,5 +96,8 @@ int main(){
   printf("Area: %.2fkm2\n", area2);
   printf("PIB: R$%.2f\n", pib2);
   printf("Quantidade de pontos turisticos: %d\n", quantidadePontosTuristicos2);
+  printf("Densidade Populacional: %.2f hab/km2\n", densidadePopulacional2);
+  printf("PIB per Capita: R$%.2f\n", pibPerCapita2);
+
   return 0;
 }
