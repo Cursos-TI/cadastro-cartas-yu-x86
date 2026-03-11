@@ -5,5 +5,5 @@ No jogo Super Trunfo, os jogadores comparam as propriedades das cartas para dete
 O desafio está dividido em três níveis: Novato, Aventureiro e Mestre, com cada nível adicionando mais complexidade ao anterior. Você deve escolher qual desafio quer realizar.
 
 Nível novato: ✔
-Nível aventureiro:  ...
+Nível aventureiro:  ✔
 Nível mestre: ...
